@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Zbirka Zadataka </title>
+
+<script type="text/javascript">
+
+/* 1. Deklarirati 4 varijable, dodijeliti im proizvoljne numeričke vrijednosti. Pomoću console.log funkcije ispišite zbroj prve i treće varijable, ispišite zatim rezultat dijeljenja druge i četvrte varijable.
+
+var a = 2, b = 4, c = 6, d = 8;
+console.log("Zbir prve i treće varijable iznosi: " + (a+c));
+console.log("Rezultat dijeljenja druge i četvrte varijable iznosi: " + (b/d));
+
+*/
+
+/* 2. Ako su deklarirane varijable var a = 4, b = 44, c = 24, d = "44". Napišite koji je rezultat operacija ( true ili false )
+
+a) console.log( (a > c) ); 
+b) console.log( (a > b) || (b > c) );  
+c) console.log( (a < b) && (a < c) ); 
+d) console.log( (c > b) && (b < a) ); 
+e) console.log( !(a > b) || ( (a > c) && (c > b) ) ); 
+f) console.log( !(a > b) ); 
+g) console.log( (b === d) );
+
+
+var a = 4; b = 44; c = 24; d = "44";
+
+console.log("a > c = " + (a>c));
+console.log("(a > b) || (b > c) = " + (a>b) || (b>c));
+console.log("(a < b) && (a < c) = " + (a<b) && (a<c));
+console.log("(c > b) && (b < a) = " + (c>b) && (b<a));
+console.log("!(a > b) || ( (a > c) && (c > b) ) = " + !(a>b) || (a>c) && (c>b));
+console.log("!(a > b) = " + !(a>b));
+console.log("b === d = " + (b===d));
+
+*/
+
+/* 3. Unesite 3 broja. Ukoliko su svi veći od 10, ispišite njihov zbroj. U suprotnom ispitajte koji je od njih najveći pa ga pomnožite sa samim sobom te nakon toga ispišite njihov zbroj. 
+
+
+
+var a = parseInt(prompt("Unesite prvi broj: "));
+var b = parseInt(prompt("Unesite drugi broj: "));
+var c = parseInt(prompt("Unesite treći broj: "));
+
+if((a && b && c) > 10)
+	document.write((a+b+c) + "<br>");
+else {
+	var max;
+	if ((a > b) && (a > c)) 
+		max = a;
+
+	else if ((b > a) && (b > c)) 
+		max = b;
+	
+	else if ((c > a) && (c > b)) 
+		max = c;
+	
+
+	document.write((max*=max) + "<br>");
+	document.write(a+b+c);
+}
+
+*/
+
+/* 4. Ako su deklarirane varijable var a = 12, b = 13, c = "12", d = "13"; Napišite što će se ispisati: if
+
+
+var a = 12, b = 13, c = "12", d = "13";
+
+if (a < b) {
+	if(b < d){
+		console.log("log 1");
+	} else {
+		if(a < d) {
+			console.log("log 2");
+		} else {
+			console.log("log 3");
+		}
+	}
+} else {
+	if(c>a){
+		console.log("log 4");
+	} else {
+		if(b>c){
+			console.log("log 5");
+		} else {
+			console.log("log 6");
+		}
+	}
+}
+
+*/
+
+/*
+
+5. Zatražiti od korisnika unos njegove godine rođenja. Izračunati starost korisnika i ispisati
+odgovarajuću poruku (‘Punoljetni ste’/’Niste punoljetni’). Ne uzeti u obzir ako korisnik
+unese nevaljanu godinu (npr. 2016) - u tom slučaju ispisati odgovarajuću poruku
+
+
+
+var a = prompt("Molimo nesite vaš datum rođenja u formatu: dd/mm/yy: ");
+var datum = new Date(a);
+var godinaRođenja = datum.getFullYear();
+
+var datum2 = new Date();
+var trenutnaGodina = datum2.getFullYear();
+
+var starost = trenutnaGodina - godinaRođenja;
+
+if(godinaRođenja > 1920 && godinaRođenja < 2014) {
+
+if(starost > 17)
+	document.write("Punoljetni ste")
+else
+	document.write("Maloljetni ste")
+
+} else 
+	document.write("Pogrešan unos!");
+
+*/
+
+/*
+
+6. Zatražiti od korisnika unos godine proizvodnje njegovog automobila. Izračunati starost
+automobila te ukoliko je stariji od 30 godina, ispisati ‘Oldtimer’, a ukoliko je mlađi od 5
+godina ispisati ‘Newbie’. Ne uzeti u obzir ako korisnik unese nevaljanu godinu (npr. 2016)
+- u tom slučaju ispisati odgovarajuću poruku 
+
+
+
+var godinaProizvodnje = parseInt(prompt("Molimo unesite godinu proizvodnje vašeg automobila: "));
+var datum = new Date();
+var trenutnaGodina = datum.getFullYear();
+var starost = trenutnaGodina - godinaProizvodnje;
+
+if(godinaProizvodnje > 1960 && godinaProizvodnje < 2020) {
+if (starost > 30)
+	document.write("Oldtimer");
+else if(starost < 5)
+	document.write("Newbie");
+} else
+	document.write("Pogrešan unos!");
+
+*/
+
+/* 7. Zatražiti od korisnika da unese svoje ime, prezime i broj godina. Ukoliko je korisnik mlađi
+od 20, ispišite: Ime + prezime + '', veoma ste mladi!''. Ukoliko je korisnik mlađi od 30,
+ispišite: Ime + prezime + '', mladi ste!''. Ukoliko je korisnik između 30 i 45, ispišite: Ime +
+prezime + '', u najboljim ste godinama! ''. Starije osobe nemojte komentirati. 
+
+var ime = prompt("Molimo unesite vaše ime: ");
+var prezime = prompt("Molimo unesite vaše prezime: ");
+var godine = parseInt(prompt("Molimo unesite broj vaših godina: "));
+
+if(godine < 20) {
+	document.write(ime + " " + prezime + ", veoma ste mladi!")
+} 
+else if(godine < 30) {
+	document.write(ime + " " + prezime + ", mladi ste!");
+}
+else if(godine >= 30 && godine <= 45) {
+	document.write(ime + " " + prezime + ", u najboljim ste godianama!");
+}
+
+*/
+
+/* 8. Zatražiti od korisnika da unese ime i broj godina. Ponovite to 3 puta. Ukoliko postoje 2
+osobe istih godina, ispišite njihova imena. U suprotnom provjerite postoje li 2 osobe
+istog imena, ako postoje, ispišite njihovo ime te zbroj godina. Ukoliko nijedno nije
+zadovoljeno, ispišite da nema imenjaka ni vršnjaka!
+
+
+
+var ime1 = prompt("Molimo unesite vaše ime: ");
+var godine1 = parseInt(prompt("Molimo unesite broj vaših godina: "));
+var ime2 = prompt("Molimo unesite vaše ime: ");
+var godine2 = parseInt(prompt("Molimo unesite broj vaših godina: "));
+var ime3 = prompt("Molimo unesite vaše ime: ");
+var godine3 = parseInt(prompt("Molimo unesite broj vaših godina: "));
+
+if (godine1 == godine2)
+	document.write(ime1 + ", " + ime2);
+else if (godine1 == godine3) 
+	document.write(ime1 + ", " + ime3); 
+else if (godine2 == godine3) 
+	document.write(ime2 + ", " + ime3);
+else 
+	document.write("Nema vršnjaka!");
+
+
+
+if (ime1 == ime2)
+	document.write(ime1 + ", " + ime2 + " - " + (godine1+godine2));
+else if (ime1 == ime3) 
+	document.write(ime1 + ", " + ime3 + " - " + (godine1+godine3)); 
+else if (ime2 == ime3) 
+	document.write(ime2 + ", " + ime3 + " - " + (godine2+godine3));
+else 
+	document.write("Nema imenjaka!");
+
+*/
+
+/* 9. Zatražiti od korisnika da unese 3 ocjene. Ukoliko je jedna od njih 1, ispišite ''Niste
+zadovoljili''. U suprotnom, zbrojite sve 3 ocjene i izračunajte prosjek. Ukoliko je prosjek
+manji od 2.5, ispišite ''Dovoljan 2'', za prosjek između 2.5 i 3.5 ispišite ''Dobar 3'', za
+prosjek između 3.5 i 4.5 ispišite ''Vrlo dobar 4'', za prosjek iznad 4.5 ispišite ''Odličan 5''
+
+
+
+var a = parseInt(prompt("Unesite prvu ocjenu: "));
+var b = parseInt(prompt("Unesite drugu ocjenu: "));
+var c = parseInt(prompt("Unesite treću ocjenu: "));
+
+if (a == 1 || b == 1 || c == 1)
+	document.write('Niste zadovoljili');
+else {
+	var zbir = a + b + c;
+	var prosjek = zbir / 3;
+
+	if (prosjek < 2.5)
+		document.write("Dovoljan 2");
+	else if (prosjek >= 2.5 && prosjek <= 3.5)
+		document.write("Dobar 3");
+	else if (prosjek >= 3.5 && prosjek <= 4.5)
+		document.write("Vrlo dobar 4");
+	else if (prosjek > 4.5)
+		document.write("Odličan 5");
+}
+
+*/ 
+
+/* 10. Zatražiti od korisnika da unese odgovor na pitanje ''Bojite li se zubara?''. Ukoliko je
+odgovor negativan, ispišite ''Hrabri ste!!'', u suprotnom, ispišite ''I ja!!''. Za ostale
+odgovore ispisati da je unos nepravilan. Ovaj zadatak riješiti preko switch-case-a. 
+
+var odg = prompt("Bojite li se zubara?");
+
+odg = odg.toLowerCase();
+switch (odg) {
+ case "ne":
+ console.log("Hrabri ste!");
+ break;
+ case "da":
+ console.log("I ja!!!");
+ break;
+ default:
+ console.log("Unos je pogrešan!");
+}
+
+*/
+
+/* 11. Zatražiti od korisnika da unese broj manji od 25. Preko switch-case-a provjeriti je li
+uneseni broj višekratnik broja 5 (to su brojevi 5, 10, 15 i 20). Ukoliko jest, ispišite uneseni
+broj, ukoliko nije, ispišite da broj nije višekratnik broja 5. Za sve druge brojeve koji nisu
+između 0 i 20 ispišite da je unesen pogrešan broj.
+
+
+
+var broj = parseInt(prompt("Molimo unesite broj manji od 25: "));
+
+if (broj < 25 && broj > 20) {
+
+switch(broj) {
+	case broj % 5 == 0:
+		document.write(broj);
+	case broj % 10 == 0:
+		document.write(broj);
+	case broj % 15 == 0:
+		document.write(broj);
+	case broj % 20 == 0:
+		document.write(broj);
+	default:
+		document.write("Broj nije višekratnik broja 5.");
+	} 
+
+}
+
+else if (broj >= 0 && broj <= 20) 
+	document.write("Pogrešan unos!");
+
+*/
+
+/* 12. Ako je unesen dan u tjednu, pomoću switch case-a ispišite: ako je ponedeljak, utorak
+srijeda ili četvrtak “Kada će više vikend”, za petak “It's Friday, Friday. Gotta get down on
+Friday”, ako je subota ili nedelja “Jej, vikend je!”. Ako je uneseno nešto drugo, ispišite
+“Pogrešan unos”.
+
+
+var a = prompt("Molimo unesite dan u sedmici: ");
+
+switch(a) {
+	case "Ponedjeljak": 
+		document.write("Kada će više vikend");
+		break;
+	case "Utorak":
+		document.write("Kada će više vikend");
+		break;
+	case "Srijeda":
+		document.write("Kada će više vikend");
+		break;
+	case "Četvrtak":
+		document.write("Kada će više vikend");
+		break;
+	case "Petak":
+		document.write("It's Friday, Friday");
+		break;
+	case "Subota":
+		document.write("Jej, vikend je!");
+		break;
+	case "Nedjelja":
+		document.write("Jej, vikend je!");
+		break;
+	default:
+		document.write("Pogrešan unos!");
+
+}
+
+*/
+
+/* 13. Zatražiti od korisnika da unese neki tekst. Izračunati koliko riječi ima unutar unesenog
+teksta.
+
+
+var tekst = prompt("Unesite neki tekst: ");
+var praznina = " ";
+var rijeci = 1;
+
+for(var i = 0; i < tekst.length; i++) {
+	if(tekst[i] == praznina)
+		rijeci++;
+}
+
+*/ 
+
+/* 14. Unijeti cijeli broj preko prompt funkcije. Nakon toga preko for petlje zbrojiti sve
+brojeve od 1 do unesenog broja, te ispisati rezultat. 
+
+
+var broj = parseInt(prompt("Molimo unesite cijeli broj: "));
+var zbir = 0;
+
+for(var i = 1; i <= broj; i++) {
+	zbir += i; 
+}
+
+document.write(zbir);
+*/
+
+/* 15. Zatražiti od korisnika da unose broj manji od 20. Zatim ispisati sve brojeve od unesenog
+broja do 1. Ako je unio veći broj, ispisati uneseni broj. 
+
+var broj = parseInt(prompt("Molimo unesite broj manji od 20"));
+
+if (broj < 20) {
+	for(var i = broj; i >= 1; i--) {
+		document.write(i + " ");
+	}
+} else {
+	document.write(broj);
+}
+
+*/
+
+/* 16. Zatražiti od korisnika da unese broj. Ukoliko je paran, ispisati sve brojeve unatrag od
+unesenog do 1, u suprotnom, zbrojiti sve brojeve od 1 do unesenog broja. 
+
+var broj = parseInt(prompt("Unesite broj"));
+var zbir = 0;
+
+if(broj % 2 == 0) {
+	for(var i = broj; i >= 1; i--) {
+		document.write(i + " ");
+	}
+} else {
+	for(var i = 1; i <= broj; i++) {
+		zbir += i;
+	}
+document.write(zbir);
+}
+
+*/
+
+/* 17. Učitati dva broja, zatim ispisati svaki drugi broj između njih koji je djeljiv sa 2 i 3
+
+
+var a = parseInt(prompt("Unesite prvi broj"));
+var b = parseInt(prompt("Unesite drugi broj"));
+
+var niz = [];
+
+for(var i = a; i <= b; i++) {
+	if(i % 2 == 0 && i % 3 == 0)
+		niz.push(i);
+
+}
+		
+for(var i = 0; i < niz.length; i++) {
+	if(i % 2 == 1){
+		document.write(niz[i] + " ");
+	}
+}
+
+*/
+
+/* 18. Zatražiti unos dvoznamenkastog broja. Ispisati sve njegove djelitelje. Ako nije
+dvoznamenkast, samo treba ispisati odgovarajuću poruku. 
+
+*/
+
+/*
+
+var broj = parseInt(prompt("Molimo unesite dvocijelni broj"));
+
+if(broj < 10 || broj > 99) {
+	document.write("Pogrešan unos!");
+} else {
+	for(var i = 1; i < broj; i++) {
+		if(broj % i == 0) 
+			document.write(i + " ");
+	}
+}
+
+*/
+
+/* 
+
+19. Zatražiti unos dvoznamenkastog broja. Ispisati s kojim je brojevima od 1 do 10 djeljiv.
+Ako nije dvoznamenkast, samo treba ispisati odgovarajuću poruku.
+
+var broj = parseInt(prompt("Molimo unesite dvocijelni broj: "));
+
+if(broj < 10 || broj > 99) {
+	document.write("Pogrešan unos!");
+} else {
+	for(var i = 1; i <= 10; i++) {
+		if(broj % i == 0) 
+			document.write(i + " ");
+	}
+}
+
+*/
+
+/* 20. Zatražiti od korisnika unos nekog stringa. Ispisati koliko ima samoglasnika u tom stringu.
+Ispisati prvih 5 slova unesenog stringa.
+
+
+var string = prompt("Molimo unesite neki string: ");
+var samoglasnici = 0;
+
+for(var i = 0; i < string.length; i++) {
+	if(string[i] == "a" || string[i] == "e" || string[i] == "i" || string[i] == "o" || string[i] == "u")  {
+			samoglasnici++;
+		}
+}
+
+document.write("Samoglasnici: " + samoglasnici + "<br>");
+
+for(var i = 0; i < 4; i++) {
+	document.write(string[i] + " ");
+}
+
+*/
+
+/* 21. Zatražiti od korisnika unos nekog stringa. Ispisati koliko ima suglasnika u tom stringu.
+Ispisati prva 3 slova unesenog stringa. 
+
+var string = prompt("Molimo unesite neki string: ");
+var suglasnici = 0;
+
+for(var i = 0; i < string.length; i++) {
+	if(string[i] != "a" && string[i] != "e" && string[i] != "i" && string[i] != "o" && string[i] != "u")  {
+			suglasnici++;
+		}
+}
+
+document.write("Suglasnici: " + suglasnici + "<br>");
+
+for(var i = 0; i < 3; i++) {
+	document.write(string[i] + " ");
+}
+
+*/
+
+/* 22. Učitati 2 cijela broja, koristeći prompt funkciju i izračunati im zbroj, razliku, umnožak i
+količnik, ispisati sumu svih parnih brojeva između ta 2 broja, te sumu svih neparnih
+brojeva između njih, ne uključujući njih. 
+
+var a = parseInt(prompt("Molimo unesite prvi broj"));
+var b = parseInt(prompt("Molimo unesite drugi broj"));
+
+var zbir = a + b;
+var proizvod = a * b;
+var razlika = 0;
+var količnik = 0;
+var sumaParnih = 0;
+var sumaNeparnih = 0;
+
+if(a > b) 
+   razlika = a - b; 
+else 
+   razlika = b - a;
+
+if(a > b)
+	količnik = a / b;
+else 
+	količnik = b / a;
+
+for(var i = a; a < b; i++) {
+	if(i % 2 == 0)
+		sumaParnih += i;
+	else if(i % 2 == 1)
+		sumaNeparnih += i;
+}
+
+document.write("Zbir: " + zbir + "<br>");
+document.write("Razlika: " + razlika + "<br>");
+document.write("Proizvod: " + proizvod + "<br>");
+document.write("Količnik: " + količnik + "<br>");
+document.write("Suma parnih brojeva: " + sumaParnih + "<br>");
+document.write("Suma neparnih brojeva: " + sumaNeparnih + "<br>");
+
+*/
+
+/* 1. zeforge
+Za uneseni mjesec (riječima) ispišite kojem godišnjem dobu pripada.
+Koristiti switch-case.
+
+
+var unos = prompt("Unesite željeni mjesec kako bi dobili odgovarajuće godišnje doba za njega");
+
+var mjesec = unos.toLowerCase();
+
+switch(mjesec) {
+	case "decembar":
+	case "januar":
+	case "februar":
+
+		document.write("Zima");
+			break;
+	case "mart":		
+	case "april":
+	case "maj":
+	
+		document.write("Proljeće");
+			break;
+
+	case "juni":
+	case "juli":
+	case "avgust":
+			document.write("Ljeto");
+			break;
+
+	case "septembar":
+	case "oktobar":
+	case "novembar":
+		document.write("Jesen");
+
+	default:
+		document.write("Pogrešan unos!");
+
+}
+
+*/
+
+/* 7. - zeforge
+
+Zatražiti od korisnika unos nekog stringa. 
+Ispisati koliko ima samoglasnika u tom stringu.
+Ispisati koliko ima suglasnika u tom stringu. 
+Ispisati prvih 5 slova unesenog stringa. 
+
+
+
+var string = prompt("Molimo unesite neki string: ");
+var samoglasnici = 0;
+var suglasnici = 0;
+
+for(var i = 0; i < string.length; i++) {
+	if(string[i] == "a" || string[i] == "e" || string[i] == "i" || string[i] == "o" || string[i] == "u")  {
+			samoglasnici++;
+		}
+}
+
+for(var i = 0; i < string.length; i++) {
+	if(string[i] != "a" && string[i] != "e" && string[i] != "i" && string[i] != "o" && string[i] != "u")  {
+			suglasnici++;
+		}
+}
+document.write("Samoglasnici: " + samoglasnici + "<br>");
+document.write("Suglasnici: " + suglasnici + "<br>");
+
+for(var i = 0; i < 3; i++) {
+	document.write(string[i] + " ");
+}
+
+*/
+
+/* 27. 
+Učitati 5 cijelih dvoznamenkastih brojeva. Ukoliko uneseni broj nije dvoznamenkast, odbaciti ga. Zbrojiti zadnje znamenke svakog unesenog broja i ispisati zbroj.
+
+
+var a = parseInt(prompt("Molimo unesite dvocijelni broj"));
+var b = parseInt(prompt("Molimo unesite dvocijelni broj"));
+var c = parseInt(prompt("Molimo unesite dvocijelni broj"));
+var d = parseInt(prompt("Molimo unesite dvocijelni broj"));
+var e = parseInt(prompt("Molimo unesite dvocijelni broj"));
+var zbir = 0;
+
+if(a < 10 || a > 99) {
+	document.write("Odbaceni broj je: " + a + "<br>");
+	a = 0;
+} 
+
+if(b < 10 || b > 99) {
+	document.write("Odbaceni broj je: " + b + "<br>");
+	b = 0;
+} 
+
+if(c < 10 || b > 99) {
+		document.write("Odbaceni broj je: " + c + "<br>");
+	c = 0;
+
+} 
+
+if(d < 10 || b > 99) {
+		document.write("Odbaceni broj je: " + d + "<br>");
+	d = 0;
+
+} 
+
+if(e < 10 || b > 99) {
+		document.write("Odbaceni broj je: " + e + "<br>");
+	e = 0;
+
+}
+
+
+zbir = (a % 10) + (b % 10) + (c % 10) + (d % 10) + (e % 10);
+
+
+document.write("Zbir: " + zbir);
+
+*/
+
+/* Zadatak 9 - zeforge
+Zatražiti od korisnika da unosi brojeve sve dok ne unese broj koji je veći od 20. Kada unese taj broj, ispisati iz kojeg je pokušaja unesen broj veći od 20.
+
+
+var brojač = 1;
+var a = parseInt(prompt("Unesite broj"));
+
+while(a < 20) {
+
+a = parseInt(prompt("Unesite broj"));
+	brojač++;
+}
+
+document.write("Broj veći od 20 je unešen iz " + brojač + " pokušaja.");
+*/
+
+/* Zadatak 10 - zeforge
+Učitavati brojeve sve dok zbroj unesenih brojeva ne dosegne 100. Na kraju ispisati koliko je korisnik ukupno unio brojeva.
+
+
+var broj = parseInt(prompt("Unesite broj"));
+var brojač = 1;
+var zbir = 0;
+zbir += broj;
+
+while (zbir < 100) {
+	broj = parseInt(prompt("Unesite broj"));
+	zbir += broj;
+	brojač++;
+
+	if (zbir == 100) {
+		document.write("Unijeli ste ukupno " + brojač + " broja/eva.");
+		break;
+	}
+}
+*/
+
+/* 24. Što će se ispisati: 
+
+var a = 2, b = 20, c = "6"; 
+
+     for( var i = a; i < b; i += 4 ){        
+     	if( i === c ){  
+     		console.log( i + " = " + c );        }        if( b % i === 0 ){         
+     		 console.log( i );        }        
+     		 else {          
+     		 	console.log( i + 1 );        
+     		 }      
+     		} 
+*/
+
+/*
+25. Što će se ispisati: 
+ 
+     var j = 80; 
+ 
+     for( var i = 8; i < j; i += 2 ){       
+      if( j % i === 0 ){       
+         console.log( i ); 
+
+       }        
+       else{        
+         console.log( j );       
+          }        
+          j -= 10;   
+             } 
+ 
+ */
+
+/*
+26. Što će se ispisati: 
+ 
+     var j = 60; 
+ 
+     for( var i = 6; i < j; i += 4 ){  
+           if( j % i !== 0 ){ 
+                    console.log( j ); 
+                           }      
+                             else{     
+                                  console.log( i );        }       
+
+                                   j -= 10;      } 
+
+*/
+
+/* 27. Učitati 5 cijelih dvoznamenkastih brojeva. Ukoliko uneseni broj nije dvoznamenkast, odbaciti ga. Zbrojiti zadnje znamenke svakog unesenog broja i ispisati zbroj.  
+ 
+var suma = 0, unos = 0, brojac = 0; 
+ 
+while(brojac < 5) {  
+
+unos = parseInt(prompt("Unesite dvoznamenkasti broj:"));     
+
+if(unos > 9 && unos < 100) {      
+   suma += unos%10;        
+    brojac++;     
+    } 
+    } 
+    console.log(suma); 
+
+*/
+
+/* 28.
+Zatražiti od korisnika da unosi brojeve sve dok ne unese broj koji je veći od 20. Kada unese taj broj, ispisati iz kojeg je pokušaja unesen broj veći od 20.
+
+
+var brojač = 1;
+var a = parseInt(prompt("Unesite broj"));
+
+while(a < 20) {
+
+a = parseInt(prompt("Unesite broj"));
+	brojač++;
+}
+
+document.write("Broj veći od 20 je unešen iz " + brojač + " pokušaja.");
+*/
+
+/*  29. Pomoću while petlje omogućite korisniku da unese točno 8 brojeva. Pomoću console.log funkcije ispišite četvrti unešeni broj te zbroj prvog i petog unesenog broja 
+
+var counter = 1, unos = 0, zbir = 0;
+
+while(counter <= 8) {
+
+	unos = parseInt(prompt("Unesite broj"));
+
+	if(counter == 4){
+		console.log(unos);
+	} else if(counter == 1) {
+		zbir += unos; 
+	} else if(counter == 5) {
+		zbir += unos;
+	}
+
+	counter++;
+}
+
+console.log(zbir);
+
+*/
+
+/* 30. Učitavati brojeve sve dok zbroj unesenih brojeva ne dosegne 100. Na kraju ispisati koliko je korisnik ukupno unio brojeva.
+
+
+var broj = parseInt(prompt("Unesite broj"));
+var brojač = 1;
+var zbir = 0;
+zbir += broj;
+
+while (zbir < 100) {
+	broj = parseInt(prompt("Unesite broj"));
+	zbir += broj;
+	brojač++;
+
+	if (zbir == 100) {
+		document.write("Unijeli ste ukupno " + brojač + " broja/eva.");
+		break;
+	}
+}
+
+*/
+
+/* 31. Napravite program koji korisniku omogućuje unošenje brojeva sve dok ne unese broj 0. Program treba ispisati koliko je korisnik upisao pozitivnih, a koliko negativnih brojeva.  
+ 
+
+
+ var unos, pozitivni = 0, negativni = 0;
+
+do {
+
+	unos = parseInt(prompt("Unesite broj"));
+
+	if(unos > 0) {
+		pozitivni++;
+	} else if(unos < 0) {
+		negativni++;
+	} else if(unos == 0) {
+		document.write("Pozitivni brojevi: " + pozitivni + "<br>");
+		document.write("Negativni brojevi: " + negativni + "<br>");
+		break;
+	}
+
+
+}
+
+while(unos != 0);
+
+ */
+
+ /* 32. Zatražiti od korisnika da unese 2 broja. Koristeći do-while petlju ispisati neparne brojeve koji se nalaze između ta dva broja.  
+
+
+var broj1 = parseInt(prompt("Unesite 1.broj:"));
+ var broj2 = parseInt(prompt("Unesite 2.broj:")); 
+ var brojac = 0; 
+ if(broj1 > broj2) {    
+  var pom = broj1;    
+   broj1 = broj2;    
+    broj2 = pom; 
+    } 
+    brojac = broj1; 
+    do {    
+     if(brojac % 2 == 1){         
+     console.log(brojac);    
+      }     
+      brojac++;
+       }
+        while(brojac < broj2); 
+ 
+
+ */
+
+/* 
+
+33. Preko petlje popunite niz od 10 članova, te ispišite niz. 
+
+
+
+var niz = [];
+
+for(var i = 1; i <= 10; i++) {
+	niz.push(i);
+}
+
+document.write(niz);
+
+*/
+
+/* 34. Deklarirati prazan niz i tražiti od korisnika da unosi brojeve dok suma unesenih članova niza ne pređe 50. Nakon toga ispisati duljinu niza. 
+
+
+
+var niz = [];
+var suma = 0;
+var broj;
+
+do {
+
+	broj = parseInt(prompt("Unesite broj"));
+	suma += broj;
+
+}
+while(suma <= 50);
+
+*/
+
+/* Ako imate rečenicu: “Hello world je najbolja udruga ikada” izbacite sve samoglasnike iz nje i ispišite rečenicu bez njih. To možete spremiti u neku novu varijablu. Potom izbacite sve suglasnike iz iste rečenice te i nju ispišite. 
+
+var rečenica = "Hello world je najbolja udruga ikada";
+var bezSamoglasnika = "";
+var bezSuglasnika = "";
+
+for(var i = 0; i < rečenica.length; i++) {
+
+	if(rečenica[i].toLowerCase() != "a" && rečenica[i].toLowerCase() != "e" &&rečenica[i].toLowerCase() != "i" && rečenica[i].toLowerCase() != "o" &&rečenica[i].toLowerCase() != "u") {
+
+			bezSamoglasnika += rečenica[i];
+
+	} else {
+
+			bezSuglasnika += rečenica[i];
+	}
+}
+
+document.write(rečenica + "<br>");
+document.write(bezSamoglasnika + "<br>");
+document.write(bezSuglasnika + "<br>");
+
+*/
+
+/* 36. Zadan je niz od 10 realnih brojeva: var niz = [ 87, 93, 11, 27, 38, 100, 42, 31, 8, 40 ] Naći broj najbliži nuli te broj najdalji od nule. 
+ 
+
+var niz = [87,93,11,27,38,100,42,31,8,40], min = niz[0],  max = niz[0]; 
+ 
+for(var i = 0; i < niz.length; i++) {  
+   if(niz[i] < min) {        
+    min = niz[i];     
+    }     
+    if(niz[i] > max) {    
+         max = niz[i];   
+           }
+            }
+     console.log(min); 
+     console.log(max); 
+
+*/
+
+/* 37. Ako imate deklariran niz: var array = [15, 123, 678, 23, 797, 905, 769, 567, 67], ispišite prvi, srednji i zadnji element niza. (kod mora raditi za bilo koji niz, neovisno o broju elemenata).   
+
+
+var array = [15, 123, 678, 23, 797, 905, 769, 567, 67];
+var prvi = array[0];
+var srednji = array[Math.round((array.length/2)-1)];
+var zadnji = array[array.length-1];
+
+document.write("Prvi element: " + prvi + "<br>");
+document.write("Srednji element: " + srednji + "<br>");
+document.write("Zadnji element: " + zadnji + "<br>");
+
+*/
+
+/* 38. Učitavati brojeve u niz sve dok im zbroj ne prijeđe 150. Napraviti novi niz sastavljen od neparnih brojeva iz prvog niza. Ispisati novi niz sortiran od najvećeg prema najmanjem. 
+ 
+
+
+var niz = [];
+var nizNeparnih = [];
+var zbir = 0;
+var broj;
+
+do {
+	broj = parseInt(prompt("Unesite broj"));
+	zbir += broj; 
+
+	if(broj % 2 == 1){
+		nizNeparnih.push(broj);
+	}
+}
+while(zbir <= 150);
+
+document.write(nizNeparnih.sort(function(a, b){return b-a}));
+
+ */
+
+ /* 39. Učitavati brojeve u niz sve dok im zbroj ne prijeđe 250. Napraviti novi niz sastavljen od parnih brojeva iz prvog niza. Ispisati novi niz sortiran od najmanjeg prema najvećem.
+
+
+var niz = [];
+var nizParnih = [];
+var zbir = 0;
+var broj;
+
+do {
+	broj = parseInt(prompt("Unesite broj"));
+	zbir += broj; 
+
+	if(broj % 2 == 0){
+		nizParnih.push(broj);
+	}
+}
+while(zbir <= 250);
+
+document.write(nizParnih.sort(function(a, b){return a-b}));
+ */
+
+ /* 40. Deklarirati niz koji se sastoji od 5 riječi. Napraviti novi niz koji se sastoji samo od onih riječi iz prvog niza koje imaju više od 2 slova. Ispisati novi niz riječi. 
+
+
+ var niz = ["Danas", "je", "bio", "dobar", "dan"];
+ var noviNiz = [];
+
+
+
+ for(var i = 0; i < niz.length; i++) {
+ 		if(niz[i].length > 2) {
+ 			noviNiz.push(niz[i]);
+ 		}
+ 	}
+
+document.write(noviNiz);
+
+ */
+
+ /* 41. Deklarirati niz koji se sastoji od 5 riječi. Ispisati koja je najduža i najkraća riječ iz niza. 
+
+var niz = ["Danas", "je", "bio", "dobar", "dan"];
+var najduza = 0;
+var najkraca = 999;
+
+for(var i = 0; i < niz.length; i++) {
+	if(niz[i].length > najduza) {
+		najduza = niz[i];
+	} else if(niz[i].length < najkraca){
+		najkraca = niz[i];
+	}
+}
+
+document.write("Najduža riječ: " + najduza + "<br>");
+document.write("Najkraća riječ: " + najkraca + "<br>");
+ 
+*/
+
+/* 42. Učitati niz od 10 brojeva. Ispisati koliko je parnih, a koliko neparnih brojeva u nizu. Zatim ispisati prosječnu vrijednost parnih brojeva. Također ispisati koji zbroj je veći: zbroj parnih brojeva ili zbroj neparnih brojeva.
+
+var niz = [], parni = 0, neparni = 0, prosječnaVrijednot = 0, zbirParnih = 0, zbirNeparnih = 0;
+
+for(var i = 0; i < 10; i++) {
+	niz.push(parseInt(prompt("Unesite broj")));
+
+	if(niz[i] % 2 == 0) {
+		parni++;
+		zbirParnih += niz[i];
+
+	} else if(niz[i] % 2 == 1){
+		neparni++;
+		zbirNeparnih += niz[i];
+	}
+}
+
+
+
+prosječnaVrijednost = zbirParnih / parni;
+
+document.write("Parni brojevi: " + parni + "<br>");
+document.write("Neparni brojevi: " + neparni + "<br>");
+document.write("Prosječna vrijednost parnih brojeva: " + prosječnaVrijednost + "<br>");
+if(zbirParnih > zbirNeparnih) {
+	document.write("Veći je zbir parnih brojeva");
+} else if(zbirParnih < zbirNeparnih) {
+	document.write("Veći je zbir neparnih brojeva");
+}
+
+ */
+
+/*
+
+43. Učitati niz od 10 brojeva. Ispisati najveći i najmanji član niza, zatim poredati članove niza po veličini - od najvećeg prema najmanjem i ispisati ga, potom od najmanjeg prema najvećem i njega također ispisati. 
+
+
+
+var niz = [], max = 0, min = 999, broj;
+
+for(var i = 0; i < 10; i++) {
+	broj = parseInt(prompt("Unesite broj"));
+	niz.push(broj);
+}
+
+document.write("Najveći broj niza je: " + Math.max(...niz) + "<br>");
+document.write("Najmanji broj niza je: " + Math.min(...niz) + "<br>");
+document.write("Od najvećeg prema najmanjem: " + niz.sort(function(a, b){return b-a}) + "<br>");
+document.write("Od najmanjeg prema najvećem: " + niz.sort(function(a, b){return a-b}));
+
+
+
+var a = parseInt(prompt("Molimo unesite prvi broj"));
+var b = parseInt(prompt("Molimo unesite drugi broj"));
+
+var zbir = a + b;
+var proizvod = a * b;
+var razlika = 0;
+var količnik = 0;
+var sumaParnih = 0;
+var sumaNeparnih = 0;
+
+if(a > b) 
+   razlika = a - b; 
+else 
+   razlika = b - a;
+
+if(a > b)
+	količnik = a / b;
+else 
+	količnik = b / a;
+
+for(var i = a; a < b; i++) {
+	if(i % 2 == 0)
+		sumaParnih += i;
+	else if(i % 2 == 1)
+		sumaNeparnih += i;
+}
+
+document.write("Zbir: " + zbir + "<br>");
+document.write("Razlika: " + razlika + "<br>");
+document.write("Proizvod: " + proizvod + "<br>");
+document.write("Količnik: " + količnik + "<br>");
+document.write("Suma parnih brojeva: " + sumaParnih + "<br>");
+document.write("Suma neparnih brojeva: " + sumaNeparnih + "<br>");
+
+*/
+
+/* zeforge 3. Napisati funkciju koja će izračunati porez na uplaćeni iznos. Stopa poreza za iznose između 100 i 500 je 1%, između 500 i 1000 je 5%, a preko 1000 10%. Funkcija kao parametar prima iznos, a vraća iznos poreza.
+
+
+function izračunajPorez(iznos){
+	var porez;
+	if(iznos >= 100 && iznos <= 500) {
+		porez = iznos * (1/100);
+	} else if(iznos >= 500 && iznos <= 1000) {
+		porez = iznos * (5/100);
+	} else if(iznos > 1000) {
+		porez = iznos * (10/1000);
+	}
+
+	document.write("Iznos poreza na unesenu vrijednost je: " + porez);
+}
+
+*/
+
+/* zeforge 4. - Napisati funkciju koja će kao parametar primiti broj koševa i vraćati poziciju ako je u top 5 strijelca u NBA ligi. Ako je broj veći od:
+a) 31419, vratiti 5,
+b) 32292, vratiti 4,
+c) 32482, vratiti 3,
+d) 36928, vratiti 2,
+e) 38387, vratiti 1.
+Napisati drugu funkciju koja će primiti ime igrača i broj koševa. Funkcija treba ispisati ime igrača i koliko je koševa postigao u karijeri te pomoću funkcije iz prvog dijela zadatka provjeriti nalazi li se njegov broj koševa u top 5 strijelaca u NBA ligi te ispisati koju je poziciju zauzeo ako jest.
+
+
+function vratiPoziciju(brojKoševa) {
+
+	if(brojKoševa > 38387)
+		return 1;
+	else if(brojKoševa > 36928)
+		return 2;
+	else if(brojKoševa > 32482)
+		return 3;
+	else if(brojKoševa > 32292)
+		return 4;
+	else if(brojKoševa > 31419)
+		return 5;
+}
+
+function ispis(imeIgrača, koševi) {
+	document.write(imeIgrača + " je postigao " + koševi + " koševa u karijeri. <br>");
+	document.write(vratiPoziciju(koševi));
+}
+
+
+*/
+
+/* zeforge 5. Napisati funkciju „convertToSeconds()“ koja će proslijeđene sate pretvoriti u sekunde.
+Konverziju vršiti postepeno, i to na način da će se unutar ove funkcije, kreirati funkcija „convertToMinutes()“ koja će prvo poslane sate pretvoriti u minute i nakon toga vratiti u glavnu funkciju koja će završiti konverziju. 
+
+function convertToSeconds(minute) {
+
+	function convertToMinutes(sati) {
+
+		var minute = sati * 60;
+		document.write("minute: " + minute);
+	}	
+
+	var sekunde = convertToSeconds() * 60;
+	document.write("sekunde: " + sekunde);
+}
+
+
+document.write(convertToSeconds(2));
+
+*/
+
+/* - zeforge- Zadatak 1:
+Deklarirati niz koji se sastoji od 5 riječi.
+Napisati funkciju koja vraća najdulju i najkraću riječ iz niza te ispisati rezultat u glavnom programu.
+
+
+var niz = ["Danas", "je", "bio", "dobar", "dan"];
+
+function najdužaNajkraćaRiječ(niz) {
+
+var najduza = 0;
+var najkraca = 999;
+
+for(var i = 0; i < niz.length; i++) {
+	if(niz[i].length > najduza) {
+		najduza = niz[i];
+	} else if(niz[i].length < najkraca){
+		najkraca = niz[i];
+	}
+}
+
+document.write("Najduža riječ: " + najduza + "<br>");
+document.write("Najkraća riječ: " + najkraca + "<br>");
+
+}
+
+najdužaNajkraćaRiječ(niz);
+
+*/
+
+/* zeforge - Zadatak 2:
+Učitati niz od 10 brojeva. Ispisati najveći i najmanji član niza, zatim poredati članove niza po veličini - od najvećeg prema najmanjem i ispisati ga, potom od najmanjeg prema  najvećem i njega također ispisati.
+
+
+var niz = [], max = 0, min = 999, broj;
+
+for(var i = 0; i < 10; i++) {
+	broj = parseInt(prompt("Unesite broj"));
+	niz.push(broj);
+}
+
+document.write("Najveći broj niza je: " + Math.max(...niz) + "<br>");
+document.write("Najmanji broj niza je: " + Math.min(...niz) + "<br>");
+document.write("Od najvećeg prema najmanjem: " + niz.sort(function(a, b){return b-a}) + "<br>");
+document.write("Od najmanjeg prema najvećem: " + niz.sort(function(a, b){return a-b}));
+
+*/
+
+/* zeforge - Zadatak 3:
+Učitavati brojeve u niz sve dok im zbroj ne prijeđe 250. Napraviti novi niz sastavljen od parnih brojeva iz prvog niza. Ispisati novi niz sortiran od najmanjeg prema najvećem.
+
+
+var niz = [];
+var nizParnih = [];
+var zbir = 0;
+var broj;
+
+do {
+	broj = parseInt(prompt("Unesite broj"));
+	zbir += broj; 
+
+	if(broj % 2 == 0){
+		nizParnih.push(broj);
+	}
+}
+while(zbir <= 250);
+
+document.write(nizParnih.sort(function(a, b){return a-b}));
+
+*/
+
+/* zeforge - Zadatak 4:
+Zadan je niz od 10 realnih brojeva: var niz = [ 87, 93, 11, 27, 38, 100, 42, 31, 8, 40 ] Naći broj najbliži nuli te broj najdalji od nule.
+
+
+var niz = [87,93,11,27,38,100,42,31,8,40], min = niz[0],  max = niz[0]; 
+ 
+for(var i = 0; i < niz.length; i++) {  
+   if(niz[i] < min) {        
+    min = niz[i];     
+    }     
+    if(niz[i] > max) {    
+         max = niz[i];   
+           }
+            }
+     console.log(min); 
+     console.log(max); 
+*/
+
+/* zeforge - Zadatak 5:
+Deklarirati niz koji se sastoji od 5 riječi. 
+Ispisati koja je najduža i najkraća riječ iz niza.
+Napraviti novi niz koji se sastoji samo od onih riječi iz prvog niza koje imaju više od 2 slova. Ispisati novi niz riječi. Ispisati koja je najduža i najkraća riječ iz niza.
+
+
+var niz = ["Danas", "je", "bio", "dobar", "dan"];
+var noviNiz = [];
+
+var najduza = 0;
+var najkraca = 999;
+
+document.write("Početni niz je: " + niz + "<br>");
+
+for(var i = 0; i < niz.length; i++) {
+	if(niz[i].length > najduza) {
+		najduza = niz[i];
+	} else if(niz[i].length < najkraca){
+		najkraca = niz[i];
+	}
+}
+
+document.write("Najduža riječ: " + najduza + "<br>");
+document.write("Najkraća riječ: " + najkraca + "<br>");
+ 
+
+ for(var i = 0; i < niz.length; i++) {
+ 		if(niz[i].length > 2) {
+ 			noviNiz.push(niz[i]);
+ 		}
+ 	}
+
+document.write("Novi niz sa riječima sa više od 2 slova je: " + noviNiz + "<br>");
+
+for(var i = 0; i < noviNiz.length; i++) {
+	if(noviNiz[i].length > najduza) {
+		najduza = noviNiz[i];
+	} else if(noviNiz[i].length < najkraca){
+		najkraca = niz[i];
+	}
+}
+
+document.write("Njegova najduža riječ: " + najduza + "<br>");
+document.write("Njegova najkraća riječ: " + najkraca + "<br>");
+
+*/
+
+/* zeforge - Zadatak 1:
+Napraviti matricu 3x3. Prvi redak neka se sastoji od brojeva 2, 4 i 6, drugi redak od istih brojeva na kvadrat, treći od istih brojeva na treću potenciju.
+
+
+var matrica = 
+[
+[2, 4, 6],
+[4, 16, 36],
+[16, 64, 216]
+
+]
+
+*/
+
+
+/*
+
+Zadatak 2: zeforge
+
+Napravi funkciju koja će uspoređiti dva niza i vratiti novi niz sa elementima koji se nalaze u jednom ili drugom nizu (jedinstveni elementi). Ignorirati elemente koji su isti i u prvom i u drugom nizu.
+
+
+
+
+function porediNizove(nizA, nizB) {
+
+	var nizC = nizA.filter(function(obj) {return nizB.indexOf(obj) == -1; });
+	
+
+	return nizC;
+}
+
+document.write(porediNizove([1, 2, 3, 4, 5], [1, 3, 4]));
+
+*/
+
+/* Napraviti funkciju koja prima dva ili više nizova i vraća novi niz od jedinstvenih vrijednosti u slijedu kao što se nalaze u orginalnim nizovima.
+
+
+function unikatniElementi(...nizovi) {
+
+    var zajednickiNiz = []
+
+    nizovi.forEach(nizovi => {
+        zajednickiNiz = [...zajednickiNiz, ...nizovi]
+    })
+
+    var unikatniNiz = zajednickiNiz.reduce((noviNiz, item) => {
+
+        if (noviNiz.includes(item)){
+            return noviNiz
+
+        } else {
+            return [...noviNiz, item]
+        }
+    }, [])
+
+    return unikatniNiz;
+}
+
+document.write(unikatniElementi([1, 2, 3, 4, 5], [1, 3, 5]));
+
+*/
+
+/* zeforge- Zadatak 4:
+Napisati funkciju koja prima string a vraća string u obrnutom slijedu. (Npr: “danas” -> “sanad”).
+
+
+function obrnutiSlijed(string) {
+
+	for(var i = string.length-1; i >= 0; i--) {
+		document.write(string[i]);
+	}
+}
+
+obrnutiSlijed("danas");
+
+*/
+
+/*
+
+zeforge - Zadatak 5:
+Napisati funkciju koja prima rečenicu (string), a vraća istu rečenicu sa svakom riječi napisanom velikim slovom. (Npr. “Danas je lijep dan za programiranje” -> “Danas Je Lijep Dan Za Programiranje”).
+
+
+
+function uVelikoSlovo(string) {
+
+	var splitString = string.toLowerCase().split(' ');
+
+   for (var i = 0; i < splitString.length; i++) {
+       splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1);     
+   }
+
+   return splitString.join(' '); 
+}
+
+document.write(uVelikoSlovo("Danas je lijep dan za programiranje"));
+
+*/
+
+// JAVASCRIPT 1 
+
+/* 1. Zatražiti od korisnika da unese 2 broja. Ukoliko je prvi broj veći od drugog, pozvati funkciju koja će oduzeti drugi od prvog. U suprotnom, pozvati funkciju koja će ih zbrojiti. Ispisati rezultat u oba slučaja.  
+ 
+var broj1 = parseInt(prompt('Unesite prvi broj:')); var broj2 = parseInt(prompt('Unesite drugi broj:')); 
+ 
+function zbroj(br1, br2){   return br1 + br2; } 
+ 
+function razlika(br1, br2){   return br1 - br2; } 
+ 
+if(broj1 > broj2){   console.log('Razlika brojeva je: ' + razlika(broj1, broj2)); } else{   console.log('Zbroj brojeva je: ' + zbroj(broj1, broj2)); } 
+
+*/
+
+/* 2. Jedostavan kalkulator - Zatražiti od korisnika unos dva broja i znaka za operaciju koju želi obaviti nad brojevima (+, -, *, /). Napisati funkciju koja imitira rad jednostavnog kalkulatora: prima dva broja, i znak operacije. Ovisno o znaku, obaviti traženu operaciju. Funkcija vraća rezultat u glavni program, zatim je on ispisuje.  
+
+var a = parseInt(prompt("Molimo unesite prvi broj"));
+var b = parseInt(prompt("Molimo unesite drugi broj"));
+var znak = prompt("Unesite operaciju računanja");
+
+ function kalkulator() {
+ 	switch(znak) {
+ 		case "+":
+ 			return a + b;
+ 				break;
+ 		case "-":
+ 			return a - b;
+ 				break;
+ 		case "*":
+ 			return a * b;
+ 				break;
+ 		case "/":
+ 			return a / b;
+ 				break;
+ 		default:
+ 			console.log("Error!");
+ 	}
+ }
+
+ document.write("Rezultat: " + kalkulator(5, 2, "+"));
+
+*/
+
+/*  Pomoću prompt-a korisniku postaviti jednostavan matematički izraz (npr: Koliko je 2+2?). U funkciji provjeriti točnost unesenog odgovora. Ako je točan, ispisati poruku i vratiti true. Ako nije točan, vratiti točan rezultat u glavni program, gdje se zatim treba ispisati poruka "Vaš odgovor je netočan, točan odgovor glasi: ...". 
+
+
+var pitanje = parseInt(prompt("Koliko je 2+2?"));
+
+function odgovor() {
+	if (pitanje == 4) {
+		document.write("Vaš odgovor je tačan.");
+		return true 
+	} else {
+		pitanje = 4;
+		document.write("Vaš odgovor je netačan, tačan odgovor glasi: " + pitanje);
+	}
+
+}
+
+odgovor();
+
+*/
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
